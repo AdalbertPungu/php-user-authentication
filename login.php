@@ -16,6 +16,13 @@
     <title>Login</title>
   </head>
   <body>
-    
+    <h1>Formulaire de connexion</h1><hr><br>
+    <form action="/controllers/login.php" method="post">
+        <?= (isset($_GET['error'])) ? $_GET['error'].'<br><br>' : "" ?>
+        Email : <br><input type="email" placeholder="Email" name="email"><br><br>
+        Mot de passe : <br><input type="password" placeholder="Mot de passe" name="password"><br><br>
+        <input type="submit" value="Se connecter">
+    </form>
+    <br><a href="./index.php">S'enregistrer</a>
   </body>
 </html>
