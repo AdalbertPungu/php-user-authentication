@@ -14,6 +14,24 @@ $password = $_POST["password"];
 $password2 = $_POST["password2"];
 $adresse = $_POST["adresse"];
 
+if ($name != "" && 
+    $postnom != "" && 
+    $prenom != "" && 
+    $genre != "" && 
+    $matricule != "" && 
+    $promotion != "" && 
+    $email != "" && 
+    $phone != "" && 
+    $password != "" && 
+    $password2 != "") {
+
+    if (!empty($_SESSION['utilisateurs'][$email])) {
+        header("Location: /index.php?error=l'email est déjà utilisé");
+    } else {
+        
+    }
+}
+
 if ($name == "") {
     echo "Le nom est vide<br><br>";
 }
