@@ -28,7 +28,35 @@ if ($name != "" &&
     if (!empty($_SESSION['utilisateurs'][$email])) {
         header("Location: /index.php?error=l'email est déjà utilisé");
     } else {
-        
+        $_SESSION['utilisateurs'][$email] = [
+            'name' => $name,
+            'postnom' => $postnom,
+            'prenom' => $prenom,
+            'genre' => $genre,
+            'matricule' => $matricule,
+            'promotion' => $promotion,
+            'email' => $email,
+            'phone' => $phone,              
+            'password' => $password,
+            'password' => $password2,
+            'adresse' => $adresse
+        ];
+
+        $_SESSION['connexion'] = [
+            'name' => $name,
+            'postnom' => $postnom,
+            'prenom' => $prenom,
+            'genre' => $genre,
+            'matricule' => $matricule,
+            'promotion' => $promotion,
+            'email' => $email,
+            'phone' => $phone,              
+            'password' => $password,
+            'password' => $password2,
+            'adresse' => $adresse
+        ];
+
+        header('Location: /profile.php');
     }
 }
 
